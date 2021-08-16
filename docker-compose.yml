@@ -8,10 +8,10 @@ services:
       - ./mysql/initdb/:/docker-entrypoint-initdb.d
       - ./mysql/data/:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=123132123
+      - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_DATABASE=lemp_db
       - MYSQL_USER=lemp
-      - MYSQL_PASSWORD=123456
+      - MYSQL_PASSWORD=1234
 
   php:
     build: ./
@@ -42,6 +42,6 @@ services:
       - "8000:80"
 
   redis:
-    image: redis
+    image: redis:5.0.13-alpine
     ports:
       - "6379:6379"
